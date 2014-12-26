@@ -23,7 +23,7 @@ clean-pyc:
 	find . -name '__pycache__' -exec rm -fr {} +
 
 test:
-	python setup.py test
+	py.test
 
 docs:
 	$(MAKE) -C docs clean
