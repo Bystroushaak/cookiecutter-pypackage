@@ -1,54 +1,57 @@
-#!/usr/bin/env python
+#! /usr/bin/env python
 # -*- coding: utf-8 -*-
+#
+# Interpreter version: python 2.7
+#
+# Imports =====================================================================
+from setuptools import setup, find_packages
+
+from docs import getVersion
 
 
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+# Variables ===================================================================
+changelog = open('CHANGES.rst').read()
+long_description = "\n\n".join([
+    open('README.rst').read(),
+    changelog
+])
 
 
-readme = open('README.rst').read()
-history = open('HISTORY.rst').read().replace('.. :changelog:', '')
-
-requirements = [
-    # TODO: put package requirements here
-]
-
-test_requirements = [
-    # TODO: put package test requirements here
-]
-
+# Actual setup definition =====================================================
 setup(
     name='{{ cookiecutter.repo_name }}',
-    version='{{ cookiecutter.version }}',
+    version=getVersion(changelog),
     description='{{ cookiecutter.project_short_description }}',
-    long_description=readme + '\n\n' + history,
+    long_description=long_description,
+    url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}',
+
     author='{{ cookiecutter.full_name }}',
     author_email='{{ cookiecutter.email }}',
-    url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}',
-    packages=[
-        '{{ cookiecutter.repo_name }}',
-    ],
-    package_dir={'{{ cookiecutter.repo_name }}':
-                 '{{ cookiecutter.repo_name }}'},
-    include_package_data=True,
-    install_requires=requirements,
-    license="BSD",
-    zip_safe=False,
-    keywords='{{ cookiecutter.repo_name }}',
+
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
-        'Natural Language :: English',
         "Programming Language :: Python :: 2",
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
+        "License :: OSI Approved :: MIT License",
     ],
-    test_suite='tests',
-    tests_require=test_requirements
+    license='MIT',
+
+    packages=find_packages('src'),
+    package_dir={'': 'src'},
+    include_package_data=True,
+    zip_safe=True,
+
+    install_requires=open("requirements.txt").read().splitlines(),
+
+    test_suite='py.test',
+    tests_require=["pytest"],
+    extras_require={
+        "test": [
+            "pytest"
+        ],
+        "docs": [
+            "sphinx",
+            "sphinxcontrib-napoleon",
+        ]
+    },
 )

@@ -1,22 +1,41 @@
-.. {{ cookiecutter.repo_name }} documentation master file, created by
-   sphinx-quickstart on Tue Jul  9 22:26:36 2013.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+{{ cookiecutter.project_name }} documentation
+=====================================================
 
-Welcome to {{ cookiecutter.project_name }}'s documentation!
-======================================
+Welcome in the ``{{ cookiecutter.project_name }}`` documentation.
 
-Contents:
-
+API documentation
+-----------------
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 2
 
-   readme
-   installation
-   usage
-   contributing
-   authors
-   history
+    api/modules
+
+
+Installation
+------------
+Module is hosted at `PYPI <https://pypi.python.org/pypi/rbottle>`_,
+and can be easily installed using
+`PIP <http://en.wikipedia.org/wiki/Pip_%28package_manager%29>`_:
+
+::
+
+    sudo pip install {{cookiecutter.repo_name}}
+
+Testing
+-------
+This project uses `pytest <http://pytest.org>`_ for testing. You can run
+the tests from the root of the package using following command::
+
+    $ py.test tests/
+
+
+Source code
+-----------
+This project is released as opensource (GPL) and source codes can be found at
+GitHub:
+
+- https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}
+
 
 Indices and tables
 ==================
@@ -24,4 +43,3 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
