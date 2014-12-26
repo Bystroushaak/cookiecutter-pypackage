@@ -1,9 +1,10 @@
 {
-	"full_name": "Bystroushaak",
-	"email": "bystrousak@kitakitsune.org",
-	"github_username": "Bystroushaak",
-	"project_name": "Boilerplate",
-	"repo_name": "boilerplate",
-	"project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
-	"version": "0.1.0"
+    "full_name": "Bystroushaak",
+    "email": "bystrousak@kitakitsune.org",
+    "github_username": "Bystroushaak",
+    "project_name": "Boilerplate",
+    "repo_name": "boilerplate",
+    "project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
+    "year": "2014",
+    "version": "0.1.0"
 }
