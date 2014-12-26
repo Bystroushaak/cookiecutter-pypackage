@@ -8,7 +8,7 @@
         :target: https://pypi.python.org/pypi/{{ cookiecutter.repo_name }}
 
 
-TODO: SHORT DESCRIPTION HERE!
+{{ cookiecutter.project_short_description }}
 
 Documentation
 -------------
