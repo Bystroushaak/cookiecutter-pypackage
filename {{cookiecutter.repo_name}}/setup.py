@@ -10,19 +10,19 @@ from docs import getVersion
 
 
 # Variables ===================================================================
-changelog = open('CHANGES.rst').read()
-long_description = "\n\n".join([
+CHANGELOG = open('CHANGES.rst').read()
+LONG_DESCRIPTION = "\n\n".join([
     open('README.rst').read(),
-    changelog
+    CHANGELOG
 ])
 
 
 # Actual setup definition =====================================================
 setup(
     name='{{ cookiecutter.repo_name }}',
-    version=getVersion(changelog),
+    version=getVersion(CHANGELOG),
     description='{{ cookiecutter.project_short_description }}',
-    long_description=long_description,
+    long_description=LONG_DESCRIPTION,
     url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}',
 
     author='{{ cookiecutter.full_name }}',
